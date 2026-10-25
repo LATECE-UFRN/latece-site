@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Conversia",
+    "category": "Comunicação aumentativa e alternativa",
+    "description": "Software de comunicação alternativa para auxiliar na expressão de pessoas com necessidades complexas de comunicação.",
+    "imageUrl": "/images/equipments/comunicacao/CONVERSIA.jpeg",
+    "downloadUrl": ""
+  },
+  {
+    "id": 2,
+    "name": "Lupa Eletrônica",
+    "category": "Auxílios para ampliação da função visual e recursos que traduzem conteúdos visuais em áudio ou informação tátil",
+    "description": "Equipamento que amplia textos e imagens para pessoas com baixa visão.",
+    "imageUrl": "/images/equipments/baixa-visao/LUPA.jpeg",
+    "downloadUrl": ""
+  },
+  {
+    "id": 3,
+    "name": "Teclado Adaptado",
+    "category": "Recursos de acessibilidade no computador",
+    "description": "Teclado com colmeia para facilitar a digitação de pessoas com dificuldades motoras.",
+    "imageUrl": "/images/equipments/acessibilidade-computador/TECLADO.jpeg",
+    "downloadUrl": ""
+  },
+  {
+    "id": 4,
+    "name": "Livro em Braille",
+    "category": "Livros acadêmicos",
+    "description": "Material didático adaptado em Braille para estudantes com cegueira.",
+    "imageUrl": "/images/equipments/livros-jogos/LIVRO-EM-BRAILLE.jpeg",
+    "downloadUrl": ""
+  }
+]

@@ -1,0 +1,139 @@
+{
+  "version": "1.1.0",
+  "updatedAt": "2026-10-19T00:00:00Z",
+  "items": [
+    {
+      "id": 1,
+      "title": "11ª Edição do SENEI: Educação Especial Inclusiva em Foco",
+      "excerpt": "O SENEI retorna com tema voltado para educação inclusiva, políticas e tecnologias assistivas. LATECE apoia o evento.",
+      "content": "<p>O Seminário Nacional sobre Educação e Inclusão Social de Pessoas com Necessidades Educacionais Especiais (SENEI) é um evento acadêmico consolidado na área da Educação Especial, realizado desde 2004 pela Universidade Federal do Rio Grande do Norte (UFRN), com periodicidade bienal.</p><p>Ao longo de suas edições, o seminário tem promovido a articulação entre ensino, pesquisa, extensão e formação continuada, configurando-se como um importante espaço de debate científico no cenário nacional.</p><p><strong>A 11ª edição do SENEI</strong>, com o tema <em>\"Educação Especial Inclusiva: políticas, práticas baseadas em evidências, tecnologias e compromisso ético com a acessibilidade\"</em>, é organizada pelo Programa de Pós-Graduação em Educação Especial (PPGEESP/UFRN) e conta com a participação de pesquisadores nacionais e internacionais.</p><p>Nesta edição, o evento amplia sua abrangência ao integrar:</p><ul><li>Mostra de Objetos, Tecnologias e Recursos Educacionais para Educação Especial (MOsTRE3)</li><li>Seminário do Grupo de Pesquisa Deficiências Físicas e Sensoriais</li></ul><p><strong>Destaca-se, ainda, a parceria e colaboração com o Laboratório de Tecnologia Assistiva do Centro de Educação da UFRN (LATECE)</strong>, que apoia o evento no fortalecimento das discussões sobre acessibilidade, tecnologias assistivas e práticas inclusivas.</p>",
+      "category": "Evento",
+      "createdAt": "2026-07-28T14:30:00",
+      "updatedAt": "2026-07-28T14:30:00",
+      "imageUrl": "assets/images/news/senei-banner.png",
+      "status": "published",
+      "authorId": 1,
+      "isVideo": false,
+      "videoUrl": null,
+      "links": [
+        { "label": "Site Oficial do SENEI", "url": "https://www.even3.com.br/xi-senei-728098/" },
+        { "label": "Instagram do SENEI", "url": "https://www.instagram.com/seneiufrn/" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Você sabia? O LATECE agora está no YouTube!",
+      "excerpt": "Confira a entrevista exclusiva sobre o Laboratório de Tecnologia Assistiva. Conheça nossos projetos e missão de acessibilidade.",
+      "content": "<p>O Laboratório de Tecnologia Assistiva do Centro de Educação (LATECE) da UFRN apresenta uma entrevista especial que aborda os principais projetos, pesquisas e iniciativas desenvolvidas pela equipe.</p><p>Nesta conversa, você vai conhecer mais sobre:</p><ul><li>Projetos inovadores em tecnologia assistiva</li><li>Pesquisas na área de educação especial e inclusiva</li><li>Soluções práticas para acessibilidade</li><li>Parcerias e colaborações institucionais</li><li>Impacto social das iniciativas do LATECE</li></ul><p>A entrevista começa no <strong>minuto 15:44</strong> e oferece uma visão completa das atividades do laboratório.</p><p><strong>Inscreva-se no canal e não perca nenhuma atualização do LATECE!</strong></p>",
+      "category": "Notícia",
+      "createdAt": "2026-05-31T10:15:00",
+      "updatedAt": "2026-05-31T10:15:00",
+      "imageUrl": "https://img.youtube.com/vi/hNlNYdAyZI0/hqdefault.jpg",
+      "status": "published",
+      "authorId": 1,
+      "isVideo": true,
+      "videoUrl": "https://www.youtube.com/embed/hNlNYdAyZI0?start=944",
+      "links": [
+        { "label": "Ver no YouTube", "url": "https://youtu.be/hNlNYdAyZI0?si=kDTBAScLqHKBvGgm" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Conheça a História por Trás da Logo do LATECE",
+      "excerpt": "Descubra o significado e processo criativo que levou ao design único do LATECE.",
+      "content": "<p>Toda identidade visual conta uma história. Assim é com a logo do Laboratório de Tecnologia Assistiva do Centro de Educação (LATECE).</p><p>Neste vídeo exclusivo, apresentamos:</p><ul><li>O conceito por trás do design da logo</li><li>Os simbolismos das cores e formas utilizadas</li><li>O processo de criação e refinamento</li><li>Como a identidade visual reflete a missão do laboratório</li></ul><p>Entender a identidade visual de uma instituição é importante para reconhecer seus valores e compromissos. A logo do LATECE representa inovação, inclusão, acessibilidade e tecnologia aplicada à educação.</p>",
+      "category": "Pesquisa",
+      "createdAt": "2026-05-31T11:45:00",
+      "updatedAt": "2026-05-31T11:45:00",
+      "imageUrl": "https://img.youtube.com/vi/5NoJErw5nrs/maxresdefault.jpg",
+      "status": "published",
+      "authorId": 1,
+      "isVideo": true,
+      "videoUrl": "https://www.youtube.com/embed/5NoJErw5nrs",
+      "links": [
+        { "label": "Ver no YouTube", "url": "https://www.youtube.com/watch?v=5NoJErw5nrs" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "LATECE Amplia Presença nas Redes Sociais",
+      "excerpt": "Acompanhe o LATECE no Instagram para conteúdo diário sobre tecnologia assistiva e educação inclusiva.",
+      "content": "<p>O Laboratório de Tecnologia Assistiva do Centro de Educação (LATECE) está expandindo sua comunicação e agora conta com uma presença forte no Instagram!</p><p>No nosso perfil, você encontrará:</p><ul><li><strong>Conteúdo educativo</strong> sobre tecnologia assistiva e acessibilidade</li><li><strong>Registros de eventos</strong> e atividades do laboratório</li><li><strong>Histórias de impacto social</strong> dos nossos projetos</li><li><strong>Dicas práticas</strong> para inclusão e acessibilidade</li><li><strong>Notícias atualizadas</strong> sobre educação especial e inclusiva</li></ul><p><strong>Siga @latece_ufrn no Instagram e acompanhe todas as novidades do laboratório!</strong></p>",
+      "category": "Notícia",
+      "createdAt": "2026-03-23T09:30:00",
+      "updatedAt": "2026-03-23T09:30:00",
+      "imageUrl": "assets/images/news/instagram.jpg",
+      "status": "published",
+      "authorId": 1,
+      "isVideo": false,
+      "videoUrl": null,
+      "links": [
+        { "label": "Siga no Instagram @latece_ufrn", "url": "https://www.instagram.com/latece_ufrn/" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Módulo 5 do Curso AEE aborda Tecnologia Assistiva e Comunicação Aumentativa e Alternativa",
+      "excerpt": "Primeiro encontro do Módulo 5 reuniu professores do AEE no Auditório do Centro de Educação da UFRN para formação sobre TA e CAA.",
+      "content": "<p>O <strong>Módulo 5</strong> do curso de formação continuada <em>\"Planejamento, Estratégias Colaborativas e Recursos Pedagógicos no Atendimento Educacional Especializado\"</em>, promovido pela Secretaria Municipal de Educação (SME Natal / 2026), foi dedicado ao tema <strong>Tecnologia Assistiva e Comunicação Aumentativa e Alternativa</strong>.</p><p>O primeiro encontro aconteceu em <strong>28 de agosto de 2026</strong>, no <strong>Auditório do Centro de Educação da UFRN</strong>, e foi conduzido pela Profa. Ms. <strong>Renata Lima de Morais</strong> (UFRN/SME Natal), com carga horária de 4h no turno matutino e 3h no turno vespertino.</p><p>A atividade teve caráter formativo e prático, abordando recursos, estratégias e a aplicação da Tecnologia Assistiva e da Comunicação Aumentativa e Alternativa (CAA) no contexto do Atendimento Educacional Especializado (AEE).</p><p>O LATECE reafirma seu compromisso com a formação continuada de professores da rede pública e com a promoção da acessibilidade e da inclusão educacional em todos os níveis de ensino.</p>",
+      "category": "Evento",
+      "createdAt": "2026-08-28T08:00:00",
+      "updatedAt": "2026-08-28T08:00:00",
+      "imageUrl": "assets/images/news/modulo-5-aee.png",
+      "status": "published",
+      "authorId": 1,
+      "isVideo": false,
+      "videoUrl": null,
+      "links": null
+    },
+    {
+      "id": 6,
+      "title": "Módulo 5 é ampliado com segundo encontro sobre Tecnologia Assistiva e CAA",
+      "excerpt": "Continuação do Módulo 5 reforçou a formação prática em TA e CAA no Auditório do Centro de Educação da UFRN.",
+      "content": "<p>Dando continuidade à formação em <strong>Tecnologia Assistiva e Comunicação Aumentativa e Alternativa</strong>, o <strong>Módulo 5</strong> do curso <em>\"Planejamento, Estratégias Colaborativas e Recursos Pedagógicos no AEE\"</em> realizou seu segundo encontro em <strong>04 de setembro de 2026</strong>, novamente no <strong>Auditório do Centro de Educação da UFRN</strong>.</p><p>A atividade, conduzida pela Profa. Ms. <strong>Renata Lima de Morais</strong> (UFRN/SME Natal), manteve a carga horária de 4h (matutino) e 3h (vespertino), atendendo aos professores do AEE da Rede Municipal de Ensino de Natal.</p><p>Neste segundo encontro, os participantes puderam aprofundar os conteúdos iniciados no mês de agosto, com discussões práticas sobre recursos de acessibilidade, comunicação alternativa e estratégias pedagógicas para estudantes com necessidades complexas de comunicação.</p><p>A parceria entre a SME Natal, o Centro de Educação da UFRN e o LATECE tem sido fundamental para a consolidação desta formação, que integra teoria e prática no contexto da Educação Especial.</p>",
+      "category": "Evento",
+      "createdAt": "2026-09-04T08:00:00",
+      "updatedAt": "2026-09-04T08:00:00",
+      "imageUrl": "assets/images/news/modulo-5-aee.png",
+      "status": "published",
+      "authorId": 1,
+      "isVideo": false,
+      "videoUrl": null,
+      "links": null
+    },
+    {
+      "id": 7,
+      "title": "Curso de Extensão “Audiodescrição na escola: quando as palavras tornam a imagem acessível” inicia em 30 de setembro",
+      "excerpt": "Formação híbrida de 20 horas sobre audiodescrição como recurso de acessibilidade e inclusão educacional para professores da Educação Especial.",
+      "content": "<p>Inicia em <strong>30 de setembro de 2026</strong> o Curso de Extensão <em>\"Audiodescrição na escola: quando as palavras tornam a imagem acessível\"</em>, uma formação híbrida de <strong>20 horas</strong> voltada para professores do Ensino Fundamental, professores do Atendimento Educacional Especializado (AEE) e estagiários que atuam na Educação Especial.</p><p>O curso tem como objetivo central discutir a <strong>audiodescrição como recurso de acessibilidade</strong>, apresentando como a tradução de informações visuais em descrições verbais pode ampliar a participação e a inclusão educacional de estudantes que não acessam plenamente o conteúdo visual.</p><p>A formação combina <strong>encontros presenciais</strong>, realizados no Centro de Educação da UFRN (08h30 às 11h30), e <strong>encontros online</strong>, realizados pela plataforma Google Meet (08h30 às 10h30).</p><p>O curso é uma realização do CE/UFRN, com envolvimento do SIA/UFRN, do TECIncluir e do LATECE — Laboratório de Tecnologia Assistiva do Centro de Educação —, além da participação da Prefeitura do Natal e da Secretaria Municipal de Educação (SME/ASCOM).</p><p>Uma oportunidade importante para quem atua na ponta da Educação Especial e deseja ampliar seu repertório sobre acessibilidade e Tecnologia Assistiva.</p>",
+      "category": "Notícia",
+      "createdAt": "2026-09-30T08:00:00",
+      "updatedAt": "2026-09-30T08:00:00",
+      "imageUrl": "assets/images/news/audiodescricao.png",
+      "status": "published",
+      "authorId": 1,
+      "isVideo": false,
+      "videoUrl": null,
+      "links": [
+        { "label": "Mais informações sobre o curso", "url": "https://latece-ufrn.github.io/audiodescricao-na-escola/" }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Oficina Livro para Todos: acessibilidade e inclusão nas bibliotecas escolares",
+      "excerpt": "Formação continuada em 19 de outubro, nos turnos matutino e vespertino, no Laboratório UAB — piso térreo da SME, para professores das bibliotecas da rede.",
+      "content": "<p>A <strong>Oficina Livro para Todos</strong> é uma ação de formação continuada destinada aos <strong>professores das bibliotecas da Rede Municipal de Ensino</strong>, com foco na <strong>acessibilidade e na inclusão de estudantes com Necessidades Complexas de Comunicação</strong>.</p><p>O encontro acontece em <strong>19 de outubro de 2026</strong>, em dois turnos — <strong>matutino (07h30 às 11h30)</strong> e <strong>vespertino (13h30 às 17h30)</strong> —, no <strong>Laboratório UAB, piso térreo da SME</strong>.</p><p>A oficina tem como tema central a utilização de recursos e estratégias que permitam que livros, leitura e experiências em bibliotecas sejam acessíveis a todos os estudantes, especialmente àqueles que apresentam necessidades complexas de comunicação. A proposta se aproxima da <strong>Comunicação Aumentativa e Alternativa (CAA)</strong> e da <strong>Tecnologia Assistiva</strong>.</p><p>A organização é da <strong>Coordenadoria de Educação Especial (CODESP/SME)</strong>, com parceria entre a CODESP, a Biblioteca Municipal Prof.ª Elienai Cartaxo (Parnamirim/RN) e o LATECE — Laboratório de Tecnologia Assistiva do Centro de Educação da UFRN.</p><p>O encontro também contará com um <strong>lanche coletivo</strong>: cada participante é convidado a trazer um item para compartilhar, tornando o momento ainda mais especial.</p><p><strong>Mais leitura para todos!</strong></p>",
+      "category": "Evento",
+      "createdAt": "2026-10-19T07:30:00",
+      "updatedAt": "2026-10-19T07:30:00",
+      "imageUrl": "assets/images/news/oficina-livro-para-todos.png",
+      "status": "published",
+      "authorId": 1,
+      "isVideo": false,
+      "videoUrl": null,
+      "links": [
+        { "label": "Mais informações sobre a oficina", "url": "https://latece-ufrn.github.io/oficina-livro-para-todos/" }
+      ]
+    }
+  ]
+}

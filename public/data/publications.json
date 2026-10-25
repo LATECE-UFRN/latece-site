@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Tecnologia Assistiva e Inclusão Escolar: Desafios e Perspectivas",
+    "authors": "SILVA, M. E. F.; ALMEIDA, M. A.",
+    "abstract": "Este artigo discute a importância da Tecnologia Assistiva no ambiente escolar para a promoção da inclusão de estudantes com deficiência.",
+    "type": "Artigo Científico",
+    "year": 2025,
+    "externalLink": "https://repositorio.ufrn.br/"
+  },
+  {
+    "id": 2,
+    "title": "Guia de Boas Práticas em Acessibilidade Web",
+    "authors": "LATECE/UFRN",
+    "abstract": "Material didático com orientações práticas para desenvolvedores sobre como criar sites acessíveis seguindo as diretrizes WCAG.",
+    "type": "Material Didático",
+    "year": 2026,
+    "externalLink": ""
+  },
+  {
+    "id": 3,
+    "title": "O Uso da Comunicação Aumentativa e Alternativa na Educação Infantil",
+    "authors": "SANTOS, A. K. M.",
+    "abstract": "Trabalho de Conclusão de Curso que investiga o uso de pranchas de comunicação e softwares assistivos no processo de alfabetização.",
+    "type": "TCC",
+    "year": 2024,
+    "externalLink": ""
+  }
+]

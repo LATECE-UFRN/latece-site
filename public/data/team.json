@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Maria Eduarda Ferreira de Lima",
+    "role": "Bolsista de Iniciação Científica - FINEP",
+    "area": "Desenvolvimento Web e Acessibilidade Digital",
+    "institution": "UERN",
+    "photoUrl": "/images/team/eduarda.jpg",
+    "lattesUrl": "http://lattes.cnpq.br/"
+  },
+  {
+    "id": 2,
+    "name": "Artemisia Kimberlly Marques da Silva",
+    "role": "Bolsista de Iniciação Científica - FINEP",
+    "area": "Interface e Experiência do Usuário (UX/UI)",
+    "institution": "UERN",
+    "photoUrl": "/images/team/artemisia.png",
+    "lattesUrl": "http://lattes.cnpq.br/"
+  },
+  {
+    "id": 3,
+    "name": "Marcone Arruda de Almeida",
+    "role": "Bolsista de Iniciação Científica - FINEP",
+    "area": "Desenvolvimento Web, Acessibilidade Digital e UX/UI",
+    "institution": "UERN",
+    "photoUrl": "/images/team/marcone.png",
+    "lattesUrl": "http://lattes.cnpq.br/"
+  }
+]

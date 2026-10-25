@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "LATECE participa de evento sobre Tecnologia Assistiva",
+    "excerpt": "O laboratório marcou presença no seminário de inclusão digital, apresentando novos recursos de CAA.",
+    "content": "O Laboratório de Tecnologia Assistiva (LATECE) da UFRN esteve presente no Seminário de Inclusão Digital e Tecnologia Assistiva. Durante o evento, a equipe apresentou os avanços nas pesquisas de Comunicação Aumentativa e Alternativa (CAA) e demonstrou equipamentos desenvolvidos no laboratório. A participação reforça o compromisso do LATECE com a disseminação do conhecimento e a inclusão social.",
+    "category": "Evento",
+    "createdAt": "2026-09-15",
+    "imageUrl": "/images/news/instagram.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Novos equipamentos disponíveis para empréstimo",
+    "excerpt": "O acervo do laboratório foi atualizado com lupas eletrônicas e teclados adaptados.",
+    "content": "O acervo de equipamentos do LATECE acaba de ser ampliado. Agora, a comunidade acadêmica conta com novas lupas eletrônicas de alta resolução e teclados adaptados para pessoas com mobilidade reduzida. Os equipamentos estão disponíveis para consulta local e empréstimo institucional, visando apoiar as atividades de ensino, pesquisa e extensão.",
+    "category": "Equipamentos",
+    "createdAt": "2026-10-02",
+    "imageUrl": "/images/news/senei-banner.png"
+  },
+  {
+    "id": 3,
+    "title": "Curso de Audiodescrição abre inscrições",
+    "excerpt": "Formação híbrida voltada para professores e profissionais da educação especial.",
+    "content": "Estão abertas as inscrições para o curso 'Audiodescrição na escola: quando as palavras tornam a imagem acessível'. A formação é híbrida, com carga horária de 20 horas, e tem como objetivo capacitar professores para transformar informações visuais em descrições acessíveis. As aulas presenciais ocorrerão no Centro de Educação da UFRN.",
+    "category": "Formação",
+    "createdAt": "2026-10-20",
+    "imageUrl": ""
+  }
+]
