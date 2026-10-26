@@ -1,0 +1,20 @@
+# MATRIZ DE EQUIVALÊNCIA REVERSA
+
+| ID | Funcionalidade / Elemento | Evidência (Vanilla) | Evidência (Nuxt Original) | Requisito STI | Decisão | Justificativa | Critério de Aceite |
+|---|---|---|---|---|---|---|---|
+| **LAT-F001** | Página Inicial (Home) e Carrossel | `index.html`, JS custom | `pages/index.vue` | LATECE-FUN-001 | **S** (Substituir) | O layout e carrossel JS serão substituídos por componentes padrão do template STI/Nuxt. | A página deve carregar utilizando o layout base do template. |
+| **LAT-F002** | Página Sobre | `about.html` | `pages/about.vue` | LATECE-FUN-002 | **A** (Adaptar) | O conteúdo textual é válido e será migrado. A estrutura visual será refeita. | Textos da missão/visão visíveis na nova página. |
+| **LAT-F003** | Página Equipe | `team.html` | `pages/team.vue` | LATECE-FUN-003 | **A** (Adaptar) | Dados do `team.json` serão migrados para o banco (ou API). A UI será adaptada. | Lista de membros renderizada via backend. |
+| **LAT-F004** | Catálogo de Equipamentos | `equipment.html` | `pages/equipment.vue` | LATECE-FUN-004 | **A** (Adaptar) | JSON migrará para PostgreSQL. O modal de imagens será recriado em Vue. | Catálogo com filtros funcionando via API. |
+| **LAT-F005** | Repositório de Publicações | `publications.html` | `pages/publications.vue` | LATECE-FUN-005 | **A** (Adaptar) | Migração de JSON para banco. Uso de componentes nativos para listagem. | Publicações e links externos funcionando. |
+| **LAT-F006** | Notícias (Listagem e Detalhe) | `news.html`, `news-detail.html` | `pages/news/` | LATECE-FUN-006 | **A** (Adaptar) | O conteúdo editorial (JSON) será migrado. O layout de cards será do template. | Listagem via API e página de detalhe renderizando HTML sanitizado. |
+| **LAT-F007** | Formulário de Sugestões | `sugestoes.html` | Não implementado | LATECE-FUN-010 | **A** (Adaptar) | Migrar do Static Forms para uma API real (endpoint POST no Nuxt) ou CMS STI. | Formulário envia dados para o backend e exibe mensagem de sucesso. |
+| **LAT-F008** | Painel Administrativo | `admin/*.html`, `admin.js` | `pages/admin/*.vue`, `server/api/` | STI-SEG-003 | **S** (Substituir) | O admin vanilla é um mock. Será substituído pelo painel real em Vue + API + PostgreSQL. | Login via JWT e CRUD completo de notícias/equipe funcionando. |
+| **LAT-F009** | Sistema de Acessibilidade | `accessibility.js` | `plugins/accessibility` | LATECE-ACES-002 | **A** (Adaptar) | Lógica de contraste e fonte será migrada para plugin Vue/Nuxt. | Painel de acessibilidade funcional no novo layout. |
+| **LAT-F010** | Internacionalização (i18n) | `locales/*.json` | `@nuxtjs/i18n` | N/A (Não exigido expressamente) | **A** (Adaptar) | Migrar arquivos JSON para o módulo de i18n do Nuxt. | Troca de idioma (PT/EN/ES) funcional e persistida. |
+| **LAT-F011** | Leitura Assistida (TTS) | `speech.js` | Não implementado | RNF-07 (Acessibilidade) | **A** (Adaptar) | Adaptar a lógica do Web Speech API para um composable ou plugin Nuxt. | Botão de TTS funcional na nova versão. |
+| **LAT-F012** | VLibras | Ausente | `plugins/vlibras` | LATECE-ACES-005 | **H** (Pendente) | Aguardando definição da STI se o widget oficial é obrigatório. | A definir pela STI. |
+| **LAT-F013** | Header / Footer / Menu | `components.js` | `layouts/default.vue` | STI-VIS-003 | **H** (Pendente) | Substituição pelo componente institucional STI (que não foi fornecido). | A definir pela STI. |
+| **LAT-F014** | CSS / Temas Visuais | `variables.css`, `components.css` | `assets/scss/` | STI-VIS-001 | **S** (Substituir) | O CSS customizado será substituído pelo Design System/Template da UFRN. | Aparência segue o manual UFRN. |
+| **LAT-F015** | Roteamento de Páginas | `path.js`, links relativos | `pages/` (Vue Router) | STI-TEC-003 | **N** (Não migrar) | O script `path.js` e lógica de subdiretório não são necessários no Nuxt/STI. | Rotas gerenciadas pelo Nuxt. |
+| **LAT-F016** | Login/Autenticação | `auth.js` (inoperante) | `server/api/auth/`, JWT | LATECE-FUN-007 | **S** (Substituir) | A lógica estática será substituída por autenticação real JWT no backend Nuxt. | Login real com token e bcrypt. |

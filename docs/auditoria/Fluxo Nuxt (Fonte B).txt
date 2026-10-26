@@ -1,0 +1,3 @@
+[Usuário] → [Páginas (.vue)] → [Stores (Pinia)] → [$fetch('/api/...')]
+                                                           ↓
+[PostgreSQL] ← [server/utils/db.ts] ← [server/api/...]

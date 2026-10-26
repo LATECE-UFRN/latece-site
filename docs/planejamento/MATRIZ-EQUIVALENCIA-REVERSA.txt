@@ -1,0 +1,17 @@
+ID,Nome,Tipo,Status_Atual,Destino,Decisao,Requisito_Relacionado,Prioridade
+LAT-F001,Home e Carrossel,Pagina,Funcional,Template Nuxt,S,LATECE-FUN-001,P1
+LAT-F002,Página Sobre,Pagina,Funcional,Migrar Texto + Template Nuxt,A,LATECE-FUN-002,P1
+LAT-F003,Página Equipe,Pagina,Funcional,API + Template Nuxt,A,LATECE-FUN-003,P1
+LAT-F004,Catálogo de Equipamentos,Pagina,Funcional,API + Template Nuxt,A,LATECE-FUN-004,P1
+LAT-F005,Publicações,Pagina,Funcional,API + Template Nuxt,A,LATECE-FUN-005,P1
+LAT-F006,Notícias,Pagina,Funcional,API + Template Nuxt,A,LATECE-FUN-006,P1
+LAT-F007,Formulário de Sugestões,Funcionalidade,Funcional,API + Template Nuxt,A,LATECE-FUN-010,P2
+LAT-F008,Painel Administrativo,Funcionalidade,Mock (Não persiste),API + Vue + PostgreSQL,S,LATECE-FUN-007,P0
+LAT-F009,Acessibilidade,Funcionalidade,Funcional,Plugin Nuxt,A,LATECE-ACES-002,P1
+LAT-F010,Internacionalização,Funcionalidade,Funcional,Módulo @nuxtjs/i18n,A,N/A,P2
+LAT-F011,Leitura Assistida (TTS),Funcionalidade,Funcional,Composable Nuxt,A,RNF-07,P2
+LAT-F012,VLibras,Funcionalidade,Ausente,Widget Oficial,H,LATECE-ACES-005,P2
+LAT-F013,Header e Footer,Componente,Funcional,Template STI,H,STI-VIS-003,P0
+LAT-F014,CSS / Design System,Visual,Funcional,Substituir pelo STI,S,STI-VIS-001,P0
+LAT-F015,Script de Caminhos (path.js),Utilitário,Funcional,Remover (Nuxt resolve),N,N/A,P3
+LAT-F016,Autenticação/Login,Funcionalidade,Inoperante,Backend Real JWT,S,LATECE-FUN-007,P0
