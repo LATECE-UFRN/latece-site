@@ -20,7 +20,7 @@
         :aria-label="`Slide ${index + 1} de ${slides.length}`"
       >
         <div class="slide-image-wrapper">
-          <img :src="slide.image" :alt="slide.alt" class="slide-image" @error="(e) => e.target.src = 'https://via.placeholder.com/1200x400/113272/FFFFFF?text=Imagem+Indisponivel'" />
+          <img :src="resolveImage(slide.image)" :alt="slide.alt" class="slide-image" @error="(e) => e.target.src = 'https://via.placeholder.com/1200x400/113272/FFFFFF?text=Imagem+Indisponivel'" />
         </div>
         <div class="slide-caption">
           <h1>{{ slide.title }}</h1>
@@ -56,12 +56,14 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+const { resolveImage } = useImageUrl()
+
 // Dados dos 4 slides solicitados
 const slides = ref([
   {
     title: 'Bem-vindo ao LATECE',
     description: 'Laboratório de Tecnologia Assistiva do Centro de Educação da UFRN. Promovendo inclusão, pesquisa e inovação.',
-    image: '/images/hero/hero-1.jpg', // Substitua pelo caminho real da imagem
+    image: '/images/hero/hero-1.jpg',
     alt: 'Estudantes utilizando recursos de tecnologia assistiva'
   },
   {
@@ -93,7 +95,7 @@ const startCarousel = () => {
   if (isPlaying.value) {
     slideInterval = setInterval(() => {
       nextSlide()
-    }, 5000) // 5 segundos por slide
+    }, 5000)
   }
 }
 
@@ -120,7 +122,7 @@ const prevSlide = () => {
 
 const goToSlide = (index) => {
   currentSlide.value = index
-  if (isPlaying.value) startCarousel() // Reinicia o timer se clicar no indicador
+  if (isPlaying.value) startCarousel()
 }
 
 onMounted(() => {

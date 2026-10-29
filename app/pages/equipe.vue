@@ -21,7 +21,7 @@
           <article v-for="membro in grupo" :key="membro.id" class="team-card-item">
             <img 
               v-if="membro.photoUrl" 
-              :src="membro.photoUrl.replace('assets/images', '/images')" 
+              :src="resolveImage(membro.photoUrl)" 
               :alt="`Foto de ${membro.name}`"
               class="team-card-photo"
               @error="(e) => { e.target.style.display = 'none'; e.target.nextElementSibling.style.display = 'flex' }"
@@ -79,12 +79,12 @@
 import { useFetch } from '#app'
 import { computed } from 'vue'
 
+const { resolveImage } = useImageUrl()
 const { data: membros, pending } = await useFetch('/api/team')
 
 const membrosAgrupados = computed(() => {
   if (!membros.value) return {}
   
-  // Ordena as roles para manter uma ordem lógica na tela
   const ordemRoles = ['coordinator', 'technician', 'student', 'bolsista', 'partner', 'collaborator', 'developer']
   
   const agrupado = membros.value.reduce((acc, membro) => {
@@ -94,7 +94,6 @@ const membrosAgrupados = computed(() => {
     return acc
   }, {})
 
-  // Retorna o objeto ordenado
   const ordenado = {}
   ordemRoles.forEach(r => { if(agrupado[r]) ordenado[r] = agrupado[r] })
   Object.keys(agrupado).forEach(r => { if(!ordenado[r]) ordenado[r] = agrupado[r] })

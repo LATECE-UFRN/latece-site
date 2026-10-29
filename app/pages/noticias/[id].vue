@@ -26,7 +26,7 @@
 
       <img 
         v-if="noticia.imageUrl" 
-        :src="noticia.imageUrl.replace('assets/images', '/images')" 
+        :src="resolveImage(noticia.imageUrl)" 
         :alt="`Imagem da notícia: ${noticia.title}`"
         style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 2rem;"
         @error="(e) => e.target.style.display = 'none'"
@@ -43,6 +43,7 @@ import { useRoute } from 'vue-router'
 import { useFetch, useHead } from '#app'
 import DOMPurify from 'isomorphic-dompurify'
 
+const { resolveImage } = useImageUrl()
 const route = useRoute()
 const idNoticia = route.params.id
 

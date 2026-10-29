@@ -5,7 +5,7 @@
       <NuxtLink :to="`/noticias/${noticias[0].id}`" class="hero-main-link" aria-label="Ler notícia completa">
         <img 
           v-if="noticias[0].imageUrl" 
-          :src="noticias[0].imageUrl.replace('assets/images', '/images')" 
+          :src="resolveImage(noticias[0].imageUrl)" 
           :alt="`Imagem da notícia: ${noticias[0].title}`" 
           class="hero-main-image"
           @error="(e) => e.target.style.display = 'none'"
@@ -25,7 +25,7 @@
       <article v-for="noticia in noticias.slice(1, 4)" :key="noticia.id" class="hero-side-card">
         <img 
           v-if="noticia.imageUrl" 
-          :src="noticia.imageUrl.replace('assets/images', '/images')" 
+          :src="resolveImage(noticia.imageUrl)" 
           :alt="`Imagem da notícia: ${noticia.title}`" 
           class="hero-side-image"
           @error="(e) => e.target.style.display = 'none'"
@@ -45,6 +45,8 @@
 </template>
 
 <script setup>
+const { resolveImage } = useImageUrl()
+
 defineProps({
   noticias: {
     type: Array,

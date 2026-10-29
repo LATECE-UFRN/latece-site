@@ -45,7 +45,7 @@
           <div style="width: 100%; height: 200px; background: #f0f0f0; border-radius: 4px; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden;">
             <img 
               v-if="equip.imageUrl" 
-              :src="equip.imageUrl.replace('assets/images', '/images')" 
+              :src="resolveImage(equip.imageUrl)" 
               :alt="`Imagem ilustrativa do equipamento: ${equip.name}`"
               style="width: 100%; height: 100%; object-fit: contain;"
               @error="(e) => { e.target.style.display = 'none'; e.target.nextElementSibling.style.display = 'flex' }"
@@ -81,21 +81,19 @@
 import { useFetch } from '#app'
 import { ref, computed, watch } from 'vue'
 
+const { resolveImage } = useImageUrl()
 const { data: equipamentos, pending } = await useFetch('/api/equipment')
 
-// Estados dos Filtros
 const searchQuery = ref('')
 const categoriaSelecionada = ref('')
 const currentPage = ref(1)
 const itemsPerPage = 9
 
-// Extrai categorias únicas
 const categorias = computed(() => {
   if (!equipamentos.value) return []
   return [...new Set(equipamentos.value.map(e => e.category))].sort()
 })
 
-// Lógica de Filtragem
 const equipamentosFiltrados = computed(() => {
   if (!equipamentos.value) return []
   
@@ -107,7 +105,6 @@ const equipamentosFiltrados = computed(() => {
   })
 })
 
-// Lógica de Paginação
 const totalPages = computed(() => {
   return Math.ceil(equipamentosFiltrados.value.length / itemsPerPage)
 })
@@ -118,7 +115,6 @@ const equipamentosPaginados = computed(() => {
   return equipamentosFiltrados.value.slice(start, end)
 })
 
-// Reseta a página para 1 quando os filtros mudam
 watch([searchQuery, categoriaSelecionada], () => {
   currentPage.value = 1
 })

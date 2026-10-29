@@ -43,7 +43,7 @@
         <article v-for="noticia in paginatedNews" :key="noticia.id" class="card">
           <img 
             v-if="noticia.imageUrl" 
-            :src="noticia.imageUrl.replace('assets/images', '/images')" 
+            :src="resolveImage(noticia.imageUrl)" 
             :alt="`Imagem da notícia: ${noticia.title}`"
             style="width: 100%; height: 180px; object-fit: cover; border-radius: 4px; margin-bottom: 1rem;"
             @error="(e) => e.target.style.display = 'none'"
@@ -85,21 +85,19 @@
 import { useFetch } from '#app'
 import { ref, computed, watch } from 'vue'
 
+const { resolveImage } = useImageUrl()
 const { data: noticias, pending } = await useFetch('/api/news')
 
-// Estados dos Filtros
 const searchQuery = ref('')
 const selectedCategory = ref('')
 const currentPage = ref(1)
 const itemsPerPage = 6
 
-// Extrai categorias únicas
 const categorias = computed(() => {
   if (!noticias.value) return []
   return [...new Set(noticias.value.map(n => n.category))].sort()
 })
 
-// Lógica de Filtragem
 const filteredNews = computed(() => {
   if (!noticias.value) return []
   
@@ -110,7 +108,6 @@ const filteredNews = computed(() => {
   })
 })
 
-// Lógica de Paginação
 const totalPages = computed(() => {
   return Math.ceil(filteredNews.value.length / itemsPerPage)
 })
@@ -121,7 +118,6 @@ const paginatedNews = computed(() => {
   return filteredNews.value.slice(start, end)
 })
 
-// Reseta a página para 1 quando os filtros mudam
 watch([searchQuery, selectedCategory], () => {
   currentPage.value = 1
 })
