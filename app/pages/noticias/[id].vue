@@ -3,7 +3,7 @@
     <div v-if="pending" aria-live="polite" style="text-align: center; padding: 3rem;">
       Carregando notícia...
     </div>
-
+    
     <div v-else-if="error || !noticia" role="alert" style="text-align: center; padding: 3rem;">
       <h2>Notícia não encontrada</h2>
       <p>A notícia que você está procurando não existe ou foi removida.</p>

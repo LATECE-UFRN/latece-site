@@ -5,72 +5,81 @@
       <p>Repositório virtual de artigos, materiais didáticos e trabalhos acadêmicos do LATECE.</p>
     </section>
 
-    <!-- Filtro por Tipo -->
-    <div style="margin-bottom: 2rem;">
-      <label for="filtro-tipo" style="font-weight: bold; margin-right: 1rem;">Filtrar por tipo:</label>
-      <select 
-        id="filtro-tipo" 
-        v-model="tipoSelecionado"
-        style="padding: 8px; border-radius: 4px; border: 1px solid #ccc; width: 100%; max-width: 400px;"
-      >
-        <option value="">Todos os tipos</option>
-        <option v-for="tipo in tipos" :key="tipo" :value="tipo">
-          {{ tipo }}
-        </option>
-      </select>
+    <!-- Filtros Fixos (Sticky) -->
+    <div class="sticky-filters">
+      <div class="filter-group">
+        <label for="search-pub" class="sr-only">Buscar publicações</label>
+        <input 
+          type="text" 
+          id="search-pub" 
+          v-model="searchQuery" 
+          placeholder="Buscar por título ou autor..." 
+          class="filter-input"
+        />
+      </div>
+      
+      <div class="filter-group">
+        <label for="filtro-tipo" class="sr-only">Filtrar por tipo</label>
+        <select id="filtro-tipo" v-model="tipoSelecionado" class="filter-select">
+          <option value="">Todos os tipos</option>
+          <option v-for="tipo in tipos" :key="tipo" :value="tipo">{{ tipo }}</option>
+        </select>
+      </div>
     </div>
 
-    <div v-if="pending" style="text-align: center;">Carregando publicações...</div>
-    
-    <div v-else-if="publicacoesFiltradas.length === 0" style="text-align: center; padding: 2rem; background: #f9f9f9; border-radius: 8px;">
-      Nenhuma publicação encontrada para este tipo.
+    <div v-if="pending" style="text-align: center; padding: 3rem;">
+      <i class="fa-solid fa-spinner fa-spin fa-2x" aria-hidden="true"></i>
+      <p>Carregando publicações...</p>
     </div>
 
-    <div v-else class="card-grid">
-      <article v-for="pub in publicacoesFiltradas" :key="pub.id" class="card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-          <span style="font-size: 0.75rem; background: #e6f0fa; color: #113272; padding: 2px 8px; border-radius: 4px;">
-            {{ pub.type }}
-          </span>
-          <span style="font-size: 0.85rem; font-weight: bold; color: #666;">
-            {{ pub.year }}
-          </span>
-        </div>
+    <div v-else>
+      <div v-if="publicacoesFiltradas.length === 0" style="text-align: center; padding: 3rem; background: #f9f9f9; border-radius: 8px;">
+        <p>Nenhuma publicação encontrada com os filtros selecionados.</p>
+      </div>
 
-        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; line-height: 1.4;">{{ pub.title }}</h3>
-        <p style="font-size: 0.9rem; color: #113272; font-weight: bold; margin-bottom: 0.5rem;">
-          {{ pub.authors }}
-        </p>
-        <p style="flex-grow: 1; font-size: 0.95rem; margin-bottom: 1.5rem;">
-          {{ pub.abstract }}
-        </p>
-        
-        <a 
-          v-if="pub.externalLink" 
-          :href="pub.externalLink" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="btn-primary" 
-          style="align-self: flex-start; font-size: 0.9rem;"
-        >
-          Acessar Publicação <i class="fa-solid fa-external-link-alt" style="margin-left: 5px;"></i>
-        </a>
-        <span v-else style="font-size: 0.85rem; color: #888; font-style: italic;">
-          Arquivo indisponível para download no momento.
-        </span>
-      </article>
+      <!-- LISTA HORIZONTAL DE PUBLICAÇÕES -->
+      <div v-else class="pub-list">
+        <article v-for="pub in publicacoesPaginadas" :key="pub.id" class="pub-item">
+          
+          <div class="pub-header">
+            <h3 class="pub-title">{{ pub.title }}</h3>
+            <span class="pub-badge">{{ pub.type }}</span>
+          </div>
+          
+          <p class="pub-authors">{{ pub.authors }}</p>
+          <div class="pub-meta">{{ pub.year }} | Publicado</div>
+          
+          <p class="pub-abstract">{{ pub.abstract }}</p>
+          
+          <div class="pub-actions">
+            <!-- Botão Ver Detalhes (Placeholder para modal futuro) -->
+            <button class="btn-outline" @click="alert('Detalhes em breve')">Ver Detalhes</button>
+            <!-- Botão Acessar (Link externo) -->
+            <a v-if="pub.externalLink" :href="pub.externalLink" target="_blank" rel="noopener noreferrer" class="btn-outline">Acessar</a>
+          </div>
+
+        </article>
+      </div>
+
+      <!-- Componente de Paginação -->
+      <Pagination 
+        v-model:currentPage="currentPage" 
+        :totalPages="totalPages" 
+      />
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
 import { useFetch } from '#app'
+import { ref, computed, watch } from 'vue'
 
-// Mudança principal: Consumindo a API do Nitro
 const { data: publicacoes, pending } = await useFetch('/api/publications')
 
+const searchQuery = ref('')
 const tipoSelecionado = ref('')
+const currentPage = ref(1)
+const itemsPerPage = 6
 
 const tipos = computed(() => {
   if (!publicacoes.value) return []
@@ -79,7 +88,26 @@ const tipos = computed(() => {
 
 const publicacoesFiltradas = computed(() => {
   if (!publicacoes.value) return []
-  if (!tipoSelecionado.value) return publicacoes.value
-  return publicacoes.value.filter(p => p.type === tipoSelecionado.value)
+  
+  return publicacoes.value.filter(pub => {
+    const matchSearch = pub.title.toLowerCase().includes(searchQuery.value.toLowerCase()) || 
+                        pub.authors.toLowerCase().includes(searchQuery.value.toLowerCase())
+    const matchType = tipoSelecionado.value ? pub.type === tipoSelecionado.value : true
+    return matchSearch && matchType
+  })
+})
+
+const totalPages = computed(() => {
+  return Math.ceil(publicacoesFiltradas.value.length / itemsPerPage)
+})
+
+const publicacoesPaginadas = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return publicacoesFiltradas.value.slice(start, end)
+})
+
+watch([searchQuery, tipoSelecionado], () => {
+  currentPage.value = 1
 })
 </script>

@@ -16,8 +16,15 @@ export default defineNuxtConfig({
   typescript: {
     strict: true
   },
-
+  
+  runtimeConfig: {
+    public: {
+      cmsApiBase: process.env.NUXT_PUBLIC_CMS_API_BASE || 'https://api.sti.ufrn.br/cms/v1'
+    }
+  },
+  
   security: {
+    rateLimiter: false, // Mantido desativado para testes locais conforme correção anterior
     headers: {
       contentSecurityPolicy: {
         'default-src': ["'self'"],
@@ -41,7 +48,6 @@ export default defineNuxtConfig({
         microphone: [],
         geolocation: [],
       },
-      // CORREÇÃO: strictTransportSecurity agora está DENTRO de headers
       strictTransportSecurity: process.env.NODE_ENV === 'production' ? {
         maxAge: 31536000,
         includeSubdomains: true,

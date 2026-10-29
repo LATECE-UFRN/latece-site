@@ -1,5 +1,4 @@
-import { noticiasStore } from '../../utils/newsStore'
-
+import newsData from '../../data/news-fallback.json'
 export default defineEventHandler((event) => {
-  return noticiasStore
+  return newsData.items || []
 })
