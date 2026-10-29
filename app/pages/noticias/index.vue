@@ -28,7 +28,7 @@
     </div>
 
     <!-- Estado de Carregamento -->
-    <div v-if="pending" style="text-align: center; padding: 3rem;">
+    <div v-if="pending" aria-live="polite" style="text-align: center; padding: 3rem;">
       <i class="fa-solid fa-spinner fa-spin fa-2x" aria-hidden="true"></i>
       <p>Carregando notícias...</p>
     </div>
@@ -85,7 +85,9 @@
 import { useFetch } from '#app'
 import { ref, computed, watch } from 'vue'
 
+// Chamada do composable de imagens
 const { resolveImage } = useImageUrl()
+
 const { data: noticias, pending } = await useFetch('/api/news')
 
 const searchQuery = ref('')

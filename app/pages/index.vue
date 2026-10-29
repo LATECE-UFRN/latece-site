@@ -18,9 +18,14 @@
       </div>
     </section>
 
-    <!-- Agenda de Eventos -->
+    <!-- Seção de Eventos (Agenda) -->
     <section style="margin-bottom: 4rem;">
-      <h2 class="section-title">Próximos Eventos</h2>
+      <div class="section-header-row">
+        <h2 class="section-title">Eventos</h2>
+        <NuxtLink to="/agenda" class="link-ver-todos">
+          | Ver todos <i class="fa-solid fa-chevron-right" style="font-size: 0.7em; margin-left: 4px;"></i>
+        </NuxtLink>
+      </div>
       
       <div v-if="pendingAgenda" style="text-align: center; padding: 2rem;">
         <i class="fa-solid fa-spinner fa-spin fa-2x" aria-hidden="true"></i>
@@ -50,7 +55,7 @@ const { data: dataNoticias, pending: pendingNoticias } = await useFetch('/api/ne
 // Busca de Agenda
 const { data: dataAgenda, pending: pendingAgenda } = await useFetch('/api/agenda')
 
-// Garantindo que os dados sejam arrays (fallback para array vazio)
+// Garantindo que os dados sejam arrays
 const noticias = computed(() => dataNoticias.value || [])
 const eventos = computed(() => dataAgenda.value || [])
 </script>

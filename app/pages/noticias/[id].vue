@@ -7,11 +7,13 @@
     <div v-else-if="error || !noticia" role="alert" style="text-align: center; padding: 3rem;">
       <h2>Notícia não encontrada</h2>
       <p>A notícia que você está procurando não existe ou foi removida.</p>
+      <!-- LINK CORRIGIDO AQUI -->
       <NuxtLink to="/noticias" class="btn-primary" style="margin-top: 1rem;">Voltar para Notícias</NuxtLink>
     </div>
 
     <article v-else>
       <div style="margin-bottom: 2rem;">
+        <!-- LINK CORRIGIDO AQUI -->
         <NuxtLink to="/noticias" style="color: #666; font-size: 0.9rem; margin-bottom: 1rem; display: inline-block;">
           &larr; Voltar para todas as notícias
         </NuxtLink>
@@ -47,6 +49,7 @@ const { resolveImage } = useImageUrl()
 const route = useRoute()
 const idNoticia = route.params.id
 
+// Chamada explícita para a API de ID
 const { data: noticia, pending, error } = await useFetch(`/api/news/${idNoticia}`)
 
 useHead(() => ({

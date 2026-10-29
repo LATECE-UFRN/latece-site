@@ -19,36 +19,54 @@
         aria-roledescription="slide"
         :aria-label="`Slide ${index + 1} de ${slides.length}`"
       >
+        <!-- Imagem -->
         <div class="slide-image-wrapper">
-          <img :src="resolveImage(slide.image)" :alt="slide.alt" class="slide-image" @error="(e) => e.target.src = 'https://via.placeholder.com/1200x400/113272/FFFFFF?text=Imagem+Indisponivel'" />
+          <img 
+            :src="resolveImage(slide.image)" 
+            :alt="slide.alt" 
+            class="slide-image" 
+            @error="(e) => e.target.src = 'https://via.placeholder.com/1200x400/113272/FFFFFF?text=Imagem+Indisponivel'" 
+          />
         </div>
+
+        <!-- Texto -->
         <div class="slide-caption">
-          <h1>{{ slide.title }}</h1>
+          <h2>{{ slide.title }}</h2>
           <p>{{ slide.description }}</p>
         </div>
       </div>
     </div>
 
-    <!-- Controles -->
-    <div class="carousel-controls">
-      <button @click="prevSlide" class="control-btn" aria-label="Slide anterior">&#10094;</button>
-      <button @click="togglePlay" class="control-btn" :aria-label="isPlaying ? 'Pausar carrossel' : 'Reproduzir carrossel'">
+    <!-- Setas Laterais de Navegação -->
+    <button class="nav-arrow prev" @click="prevSlide" aria-label="Slide anterior">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="nav-arrow next" @click="nextSlide" aria-label="Próximo slide">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Controles Inferiores: Dots + Botão de Pausa -->
+    <div class="carousel-controls-bottom">
+      <div class="carousel-indicators">
+        <button 
+          v-for="(slide, index) in slides" 
+          :key="'ind-' + index"
+          @click="goToSlide(index)"
+          class="indicator-dot"
+          :class="{ 'is-active': currentSlide === index }"
+          :aria-label="`Ir para o slide ${index + 1}`"
+          :aria-current="currentSlide === index ? 'true' : 'false'"
+        ></button>
+      </div>
+      
+      <button 
+        class="btn-play-pause" 
+        @click="togglePlay" 
+        :aria-label="isPlaying ? 'Pausar carrossel' : 'Reproduzir carrossel'"
+        :title="isPlaying ? 'Pausar' : 'Reproduzir'"
+      >
         <i :class="isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play'"></i>
       </button>
-      <button @click="nextSlide" class="control-btn" aria-label="Próximo slide">&#10095;</button>
-    </div>
-
-    <!-- Indicadores -->
-    <div class="carousel-indicators">
-      <button 
-        v-for="(slide, index) in slides" 
-        :key="'ind-' + index"
-        @click="goToSlide(index)"
-        class="indicator-dot"
-        :class="{ 'is-active': currentSlide === index }"
-        :aria-label="`Ir para o slide ${index + 1}`"
-        :aria-current="currentSlide === index ? 'true' : 'false'"
-      ></button>
     </div>
   </section>
 </template>
@@ -58,7 +76,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const { resolveImage } = useImageUrl()
 
-// Dados dos 4 slides solicitados
+// Dados dos 4 slides
 const slides = ref([
   {
     title: 'Bem-vindo ao LATECE',
@@ -90,12 +108,13 @@ const currentSlide = ref(0)
 const isPlaying = ref(true)
 let slideInterval = null
 
+// Lógica de Autoplay
 const startCarousel = () => {
   if (slideInterval) clearInterval(slideInterval)
   if (isPlaying.value) {
     slideInterval = setInterval(() => {
       nextSlide()
-    }, 5000)
+    }, 6000)
   }
 }
 
@@ -112,6 +131,7 @@ const togglePlay = () => {
   }
 }
 
+// Navegação
 const nextSlide = () => {
   currentSlide.value = (currentSlide.value + 1) % slides.value.length
 }
