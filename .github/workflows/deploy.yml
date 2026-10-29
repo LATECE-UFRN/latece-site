@@ -1,0 +1,46 @@
+name: Deploy Nuxt App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # O workflow será acionado a cada push na branch 'main'
+
+  workflow_dispatch: # Permite rodar o workflow manualmente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: corepack enable
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24" # Versão do Node.js (pode ajustar se necessário)
+          cache: 'npm'
+
+      - run: npm install
+      
+      # O comando abaixo constrói o site para o GitHub Pages.
+      # A variável de ambiente é crucial para que os links funcionem corretamente.
+      - run: npx nuxt build --preset github_pages
+        env:
+          NUXT_APP_BASE_URL: /${{ github.event.repository.name }}/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./.output/public
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
